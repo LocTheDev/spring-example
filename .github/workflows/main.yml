@@ -31,6 +31,6 @@ jobs:
 
     - name: Render Redeploy
       run: |
-	sudo apt-get update -y
-	sudo apt-get install curl
-	curl -X GET ${{ secrets.RENDER_URL }}
+        sudo apt-get update -y
+        sudo apt-get install curl
+        curl -X GET ${{ secrets.RENDER_URL }}
