@@ -1,6 +1,6 @@
 FROM amazoncorretto:8
 
-COPY . .
+COPY --chown=777 --chmod=777 . .
 
 RUN ./mvnw package
 
