@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:  # name of the job
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,8 +29,8 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/spring-example:latest
 
-    - name: Redeploy
-	run: |
-	  sudo apt-get update -y
-	  sudo apt-get install curl
-	  curl -X GET ${{ secrets.RENDER_URL }}
+    - name: Render Redeploy
+      run: |
+	sudo apt-get update -y
+	sudo apt-get install curl
+	curl -X GET ${{ secrets.RENDER_URL }}
