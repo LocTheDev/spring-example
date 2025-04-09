@@ -28,3 +28,9 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/spring-example:latest
+
+    - name: Redeploy
+	run: |
+	  sudo apt-get update -y
+	  sudo apt-get install curl
+	  curl -X GET ${{ secrets.RENDER_URL }}
